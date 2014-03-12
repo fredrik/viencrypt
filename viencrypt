@@ -81,7 +81,7 @@ then
     chmod +w $tmp
     $rm $tmp
 else
-    echo "$passw" | gpg -q -c --batch --passphrase-fd 0 --output $filename --yes --force-mdc $tmp
+    echo "$passw" | gpg -q --batch --passphrase-fd 0 --output $filename --yes --force-mdc $tmp
     $rm $tmp
     if [ $? != 0 ]; then
         # if gpg didn't work, exit
